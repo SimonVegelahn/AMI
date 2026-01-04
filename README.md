@@ -2,7 +2,7 @@
 
 An accessible, friendly, and welcoming CSS design system.
 
-I wanted to create an accessible, friendly and welcoming design theme for my projects. AMI prioritizes readability, WCAG AA/AAA compliance, and a warm visual aesthetic that doesn't sacrifice professionalism.
+I wanted to create an accessible, friendly and welcoming design theme for my projects. AMI prioritizes readability, WCAG AA/AAA compliance, and a warm visual aesthetic.
 
 ![AMI Preview](preview.png)
 
