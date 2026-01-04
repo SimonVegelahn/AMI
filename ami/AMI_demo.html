@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMI Design System — Demo</title>
+  <link rel="stylesheet" href="ami.css">
+  <style>
+    .demo-section {
+      padding: var(--space-12) 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+    .demo-section:last-child {
+      border-bottom: none;
+    }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+    }
+    .demo-box {
+      padding: var(--space-4);
+      background: var(--bg-subtle);
+      border-radius: var(--radius-lg);
+    }
+    .color-swatch {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-2);
+    }
+    .color-swatch-block {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-default);
+    }
+    .theme-toggle {
+      position: fixed;
+      bottom: var(--space-6);
+      right: var(--space-6);
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle">
+    <button class="btn btn-secondary" onclick="toggleTheme()">
+      Toggle Theme
+    </button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#" class="nav-brand">AMI</a>
+    <div class="nav-menu">
+      <a href="#typography" class="nav-link">Typography</a>
+      <a href="#buttons" class="nav-link">Buttons</a>
+      <a href="#forms" class="nav-link">Forms</a>
+      <a href="#components" class="nav-link">Components</a>
+      <a href="#data" class="nav-link">Data Display</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-primary btn-sm">Get Started</button>
+    </div>
+  </nav>
+
+  <main id="main" class="container py-12">
+    
+    <!-- Hero -->
+    <header class="text-center py-16">
+      <h1 class="text-5xl mb-4">AMI Design System</h1>
+      <p class="text-xl text-secondary max-w-prose mx-auto">
+        An accessible, friendly, and welcoming CSS design system. 
+        WCAG AA baseline with AAA for interactive elements.
+      </p>
+      <div class="flex justify-center gap-4 mt-8">
+        <button class="btn btn-primary btn-lg">Get Started</button>
+        <button class="btn btn-secondary btn-lg">View on GitHub</button>
+      </div>
+    </header>
+
+    <!-- Typography -->
+    <section id="typography" class="demo-section">
+      <h2 class="mb-6">Typography</h2>
+      
+      <div class="demo-grid">
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Headings (Inter)</h3>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+        </div>
+        
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Body Text (Source Serif 4)</h3>
+          <p class="mb-4">
+            This is body text using Source Serif 4 for a warm, editorial feel. 
+            The serif typeface improves readability for longer content while 
+            maintaining a welcoming aesthetic.
+          </p>
+          <p class="text-secondary">
+            Secondary text uses a lighter color while still meeting WCAG AA 
+            contrast requirements for accessibility.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Code (JetBrains Mono)</h3>
+          <p>Inline <code class="font-mono bg-muted p-1 rounded-sm">code snippets</code> for technical content.</p>
+          <pre class="mt-4 p-4 bg-inverse text-white rounded-lg overflow-x-auto"><code>const ami = {
+  accessible: true,
+  friendly: true,
+  version: '3.0.0'
+};</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section id="buttons" class="demo-section">
+      <h2 class="mb-6">Buttons</h2>
+      
+      <div class="demo-grid">
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Variants</h3>
+          <div class="flex flex-wrap gap-3">
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-ghost">Ghost</button>
+            <button class="btn btn-danger">Danger</button>
+          </div>
+        </div>
+        
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Sizes</h3>
+          <div class="flex flex-wrap items-center gap-3">
+            <button class="btn btn-primary btn-sm">Small</button>
+            <button class="btn btn-primary">Default</button>
+            <button class="btn btn-primary btn-lg">Large</button>
+          </div>
+        </div>
+        
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">States</h3>
+          <div class="flex flex-wrap gap-3">
+            <button class="btn btn-primary">Normal</button>
+            <button class="btn btn-primary" disabled>Disabled</button>
+            <button class="btn btn-primary">
+              <span class="spinner spinner-sm"></span>
+              Loading
+            </button>
+          </div>
+        </div>
+        
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Full Width</h3>
+          <button class="btn btn-primary btn-block">Full Width Button</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section id="forms" class="demo-section">
+      <h2 class="mb-6">Form Elements</h2>
+      
+      <div class="demo-grid">
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Text Inputs</h3>
+          <div class="form-group mb-4">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="input" placeholder="you@example.com">
+            <span class="form-helper">We'll never share your email.</span>
+          </div>
+          <div class="form-group mb-4">
+            <label class="form-label form-label-required">Password</label>
+            <input type="password" class="input" placeholder="••••••••">
+          </div>
+          <div class="form-group">
+            <label class="form-label">With Error</label>
+            <input type="text" class="input input-error" value="Invalid input">
+            <span class="form-error">This field contains an error.</span>
+          </div>
+        </div>
+        
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Select & Textarea</h3>
+          <div class="form-group mb-4">
+            <label class="form-label">Select Option</label>
+            <select class="input select">
+              <option>Choose an option...</option>
+              <option>Option One</option>
+              <option>Option Two</option>
+              <option>Option Three</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="input textarea" placeholder="Write your message..."></textarea>
+          </div>
+        </div>
+        
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Checkboxes & Radios</h3>
+          <div class="flex flex-col gap-2 mb-6">
+            <label class="checkbox">
+              <input type="checkbox" checked>
+              <span>Checkbox option one</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span>Checkbox option two</span>
+            </label>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="radio">
+              <input type="radio" name="radio-demo" checked>
+              <span>Radio option one</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="radio-demo">
+              <span>Radio option two</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Toggle Switch</h3>
+          <div class="flex flex-col gap-4">
+            <label class="toggle">
+              <input type="checkbox" checked>
+              <span>Notifications enabled</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox">
+              <span>Dark mode</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components -->
+    <section id="components" class="demo-section">
+      <h2 class="mb-6">Components</h2>
+      
+      <div class="demo-grid">
+        <!-- Cards -->
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Card</h3>
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Card Title</h4>
+              <p class="card-description">This is a card description.</p>
+            </div>
+            <div class="card-body">
+              <p>Card content goes here. Cards are great for grouping related information.</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary btn-sm">Action</button>
+              <button class="btn btn-ghost btn-sm">Cancel</button>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Hover Card</h3>
+          <div class="card card-hover cursor-pointer">
+            <div class="card-body">
+              <h4 class="card-title mb-2">Interactive Card</h4>
+              <p class="text-secondary">Hover over this card to see the lift effect.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Badges -->
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Badges</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge badge-default">Default</span>
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-success">Success</span>
+            <span class="badge badge-warning">Warning</span>
+            <span class="badge badge-error">Error</span>
+            <span class="badge badge-info">Info</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge badge-success badge-dot">With Dot</span>
+            <span class="badge badge-error badge-dot">Status</span>
+          </div>
+        </div>
+        
+        <!-- Avatars -->
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Avatars</h3>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="avatar avatar-sm">SM</div>
+            <div class="avatar">MD</div>
+            <div class="avatar avatar-lg">LG</div>
+            <div class="avatar avatar-xl">XL</div>
+          </div>
+          <div class="avatar-group">
+            <div class="avatar">A</div>
+            <div class="avatar">B</div>
+            <div class="avatar">C</div>
+            <div class="avatar">+3</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Alerts -->
+      <h3 class="text-lg mb-4 mt-8 text-muted">Alerts</h3>
+      <div class="flex flex-col gap-4">
+        <div class="alert alert-info">
+          <div class="alert-content">
+            <div class="alert-title">Information</div>
+            <div class="alert-description">This is an informational alert message.</div>
+          </div>
+        </div>
+        <div class="alert alert-success">
+          <div class="alert-content">
+            <div class="alert-title">Success</div>
+            <div class="alert-description">Your changes have been saved successfully.</div>
+          </div>
+        </div>
+        <div class="alert alert-warning">
+          <div class="alert-content">
+            <div class="alert-title">Warning</div>
+            <div class="alert-description">Please review your input before continuing.</div>
+          </div>
+        </div>
+        <div class="alert alert-error">
+          <div class="alert-content">
+            <div class="alert-title">Error</div>
+            <div class="alert-description">Something went wrong. Please try again.</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Accordion -->
+      <h3 class="text-lg mb-4 mt-8 text-muted">Accordion</h3>
+      <div class="accordion">
+        <div class="accordion-item open">
+          <button class="accordion-trigger">
+            What is AMI?
+            <span class="accordion-icon">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              AMI is an accessible, friendly, and welcoming CSS design system 
+              built with WCAG compliance in mind.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            Is it accessible?
+            <span class="accordion-icon">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              Yes! AMI meets WCAG AA standards as a baseline, with AAA compliance 
+              for interactive elements like buttons and navigation.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            Can I customize it?
+            <span class="accordion-icon">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              Absolutely. All design tokens are CSS custom properties that you can 
+              override in your own stylesheet.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Display -->
+    <section id="data" class="demo-section">
+      <h2 class="mb-6">Data Display</h2>
+      
+      <!-- Tabs -->
+      <h3 class="text-lg mb-4 text-muted">Tabs</h3>
+      <div class="tabs mb-8">
+        <div class="tabs-list">
+          <button class="tabs-trigger active" onclick="switchTab(event, 'tab1')">Overview</button>
+          <button class="tabs-trigger" onclick="switchTab(event, 'tab2')">Features</button>
+          <button class="tabs-trigger" onclick="switchTab(event, 'tab3')">Pricing</button>
+        </div>
+        <div class="tabs-content">
+          <div id="tab1" class="tabs-panel active">
+            <p>This is the overview tab content. Tabs help organize related content into separate views.</p>
+          </div>
+          <div id="tab2" class="tabs-panel">
+            <p>Features tab content would go here. Each tab panel can contain any content.</p>
+          </div>
+          <div id="tab3" class="tabs-panel">
+            <p>Pricing information and plans would be displayed in this tab.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Table -->
+      <h3 class="text-lg mb-4 text-muted">Table</h3>
+      <div class="table-bordered mb-8">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Role</th>
+              <th class="cell-numeric">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice Johnson</td>
+              <td><span class="badge badge-success badge-dot">Active</span></td>
+              <td>Developer</td>
+              <td class="cell-numeric">$4,250.00</td>
+            </tr>
+            <tr>
+              <td>Bob Smith</td>
+              <td><span class="badge badge-warning badge-dot">Pending</span></td>
+              <td>Designer</td>
+              <td class="cell-numeric">$3,800.00</td>
+            </tr>
+            <tr>
+              <td>Carol Williams</td>
+              <td><span class="badge badge-success badge-dot">Active</span></td>
+              <td>Manager</td>
+              <td class="cell-numeric">$5,100.00</td>
+            </tr>
+            <tr>
+              <td>David Brown</td>
+              <td><span class="badge badge-error badge-dot">Inactive</span></td>
+              <td>Developer</td>
+              <td class="cell-numeric">$4,000.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Breadcrumbs & Pagination -->
+      <div class="demo-grid">
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Breadcrumbs</h3>
+          <nav class="breadcrumbs">
+            <span class="breadcrumb-item"><a href="#">Home</a></span>
+            <span class="breadcrumb-item">→</span>
+            <span class="breadcrumb-item"><a href="#">Products</a></span>
+            <span class="breadcrumb-item">→</span>
+            <span class="breadcrumb-item">Details</span>
+          </nav>
+        </div>
+        
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Pagination</h3>
+          <nav class="pagination">
+            <button class="pagination-item" disabled>←</button>
+            <button class="pagination-item active">1</button>
+            <button class="pagination-item">2</button>
+            <button class="pagination-item">3</button>
+            <button class="pagination-item">...</button>
+            <button class="pagination-item">10</button>
+            <button class="pagination-item">→</button>
+          </nav>
+        </div>
+      </div>
+      
+      <!-- List -->
+      <h3 class="text-lg mb-4 mt-8 text-muted">List</h3>
+      <div class="list list-interactive" style="max-width: 400px;">
+        <div class="list-item">
+          <div class="avatar avatar-sm">JD</div>
+          <div class="list-item-content">
+            <div class="list-item-title">John Doe</div>
+            <div class="list-item-description">Software Engineer</div>
+          </div>
+          <span class="badge badge-success">Online</span>
+        </div>
+        <div class="list-item">
+          <div class="avatar avatar-sm">AS</div>
+          <div class="list-item-content">
+            <div class="list-item-title">Alice Smith</div>
+            <div class="list-item-description">Product Designer</div>
+          </div>
+          <span class="badge badge-default">Away</span>
+        </div>
+        <div class="list-item">
+          <div class="avatar avatar-sm">BW</div>
+          <div class="list-item-content">
+            <div class="list-item-title">Bob Wilson</div>
+            <div class="list-item-description">Project Manager</div>
+          </div>
+          <span class="badge badge-error">Offline</span>
+        </div>
+      </div>
+      
+      <!-- Empty State -->
+      <h3 class="text-lg mb-4 mt-8 text-muted">Empty State</h3>
+      <div class="card" style="max-width: 400px;">
+        <div class="empty-state">
+          <div class="empty-state-icon">📭</div>
+          <div class="empty-state-title">No messages</div>
+          <div class="empty-state-description">
+            You don't have any messages yet. Start a conversation!
+          </div>
+          <button class="btn btn-primary">Compose Message</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Utilities -->
+    <section id="utilities" class="demo-section">
+      <h2 class="mb-6">Loading States</h2>
+      
+      <div class="demo-grid">
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Spinners</h3>
+          <div class="flex items-center gap-4">
+            <span class="spinner spinner-sm"></span>
+            <span class="spinner"></span>
+            <span class="spinner spinner-lg"></span>
+          </div>
+        </div>
+        
+        <div class="demo-box">
+          <h3 class="text-lg mb-4 text-muted">Skeleton</h3>
+          <div class="flex flex-col gap-3">
+            <div class="skeleton" style="height: 20px; width: 60%;"></div>
+            <div class="skeleton" style="height: 16px; width: 100%;"></div>
+            <div class="skeleton" style="height: 16px; width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prose -->
+    <section id="prose" class="demo-section">
+      <h2 class="mb-6">Prose (Long-form Content)</h2>
+      
+      <article class="prose">
+        <h2>The Importance of Accessible Design</h2>
+        <p>
+          Accessibility isn't just about compliance—it's about creating experiences 
+          that work for everyone. When we design with accessibility in mind, we 
+          create better products for all users.
+        </p>
+        <h3>Key Principles</h3>
+        <p>
+          AMI follows WCAG guidelines to ensure content is perceivable, 
+          operable, understandable, and robust. This means using sufficient 
+          color contrast, providing keyboard navigation, and writing clear labels.
+        </p>
+        <blockquote>
+          "The power of the Web is in its universality. Access by everyone 
+          regardless of disability is an essential aspect."
+        </blockquote>
+        <p>
+          By building accessible foundations into our design systems, we make 
+          it easier for teams to create inclusive products without extra effort.
+        </p>
+      </article>
+    </section>
+
+    <!-- Color Palette -->
+    <section id="colors" class="demo-section">
+      <h2 class="mb-6">Color Palette</h2>
+      
+      <div class="demo-grid">
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Primary (Indigo)</h3>
+          <div class="flex flex-col gap-1">
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--indigo-600);"></div>
+              <span class="font-mono text-sm">--indigo-600 (Primary)</span>
+            </div>
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--indigo-700);"></div>
+              <span class="font-mono text-sm">--indigo-700 (Hover)</span>
+            </div>
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--indigo-50);"></div>
+              <span class="font-mono text-sm">--indigo-50 (Subtle)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Semantic</h3>
+          <div class="flex flex-col gap-1">
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--success);"></div>
+              <span class="font-mono text-sm">--success (Green)</span>
+            </div>
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--warning);"></div>
+              <span class="font-mono text-sm">--warning (Amber)</span>
+            </div>
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--error);"></div>
+              <span class="font-mono text-sm">--error (Red)</span>
+            </div>
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--info);"></div>
+              <span class="font-mono text-sm">--info (Sky)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg mb-4 text-muted">Grays</h3>
+          <div class="flex flex-col gap-1">
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--gray-900);"></div>
+              <span class="font-mono text-sm">--gray-900 (Text)</span>
+            </div>
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--gray-600);"></div>
+              <span class="font-mono text-sm">--gray-600 (Secondary)</span>
+            </div>
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--gray-200);"></div>
+              <span class="font-mono text-sm">--gray-200 (Border)</span>
+            </div>
+            <div class="color-swatch">
+              <div class="color-swatch-block" style="background: var(--gray-50);"></div>
+              <span class="font-mono text-sm">--gray-50 (Subtle BG)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t py-8 mt-12">
+    <div class="container text-center text-muted">
+      <p>AMI Design System v3.0.0 — MIT License</p>
+      <p class="mt-2">
+        <a href="#" class="text-link">GitHub</a> · 
+        <a href="#" class="text-link">Documentation</a> · 
+        <a href="#" class="text-link">Changelog</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'light' ? 'gentle' : 'light');
+    }
+
+    // Tab switching
+    function switchTab(event, tabId) {
+      // Remove active from all triggers
+      document.querySelectorAll('.tabs-trigger').forEach(t => t.classList.remove('active'));
+      // Remove active from all panels
+      document.querySelectorAll('.tabs-panel').forEach(p => p.classList.remove('active'));
+      // Add active to clicked trigger
+      event.target.classList.add('active');
+      // Add active to target panel
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    // Accordion
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/**
+ * AMI Design System v3.0.0
+ * An accessible, friendly, and welcoming design theme
+ * 
+ * https://github.com/SimonVegelahn/ami
+ * 
+ * Released under the MIT License
+ * Copyright (c) 2025 Simon Vegelahn
+ */
+
+@import url('./01-tokens.css');
+@import url('./02-reset.css');
+@import url('./03-components.css');
+@import url('./04-data-display.css');
+@import url('./05-utilities.css');

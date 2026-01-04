@@ -1,0 +1,45 @@
+{
+  "name": "ami-css",
+  "version": "3.0.0",
+  "description": "An accessible, friendly, and welcoming CSS design system with WCAG AA/AAA compliance",
+  "main": "ami.css",
+  "style": "ami.css",
+  "files": [
+    "ami.css",
+    "ami.min.css",
+    "01-tokens.css",
+    "02-reset.css",
+    "03-components.css",
+    "04-data-display.css",
+    "05-utilities.css"
+  ],
+  "scripts": {
+    "build": "cleancss -o ami.min.css 01-tokens.css 02-reset.css 03-components.css 04-data-display.css 05-utilities.css",
+    "watch": "watch 'npm run build' . --filter=./watch-filter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonVegelahn/ami.git"
+  },
+  "keywords": [
+    "css",
+    "design-system",
+    "accessible",
+    "wcag",
+    "a11y",
+    "ui",
+    "components",
+    "framework",
+    "light-theme",
+    "friendly"
+  ],
+  "author": "Simon Vegelahn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SimonVegelahn/ami/issues"
+  },
+  "homepage": "https://github.com/SimonVegelahn/ami#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3"
+  }
+}
