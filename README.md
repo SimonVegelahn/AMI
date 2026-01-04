@@ -33,7 +33,7 @@ Or use jsDelivr:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ami-css@3/ami.min.css">
 ```
 
-### Option 2: npm
+### Option 2: npm (currently not published)
 
 ```bash
 npm install ami-css
